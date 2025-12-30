@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowUpRight, InstagramIcon, FacebookIcon, MailIcon, LinkedinIcon } from "lucide-react";
 import { motion } from "framer-motion";
 import ScrollReveal from "@/components/animations/ScrollReveal";
+import logo from "@/assets/logo.png";
+
 
 const Footer = () => {
   return (
@@ -12,13 +14,19 @@ const Footer = () => {
           {/* Brand Column */}
           <ScrollReveal className="lg:col-span-1" delay={0}>
             <Link to="/" className="inline-flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-display font-bold text-lg">P</span>
-              </div>
-              <span className="font-display font-semibold text-xl">
-                Pure<span className="text-primary">Value</span>
-              </span>
-            </Link>
+  <div className="w-10 h-10 rounded-lg flex items-center justify-center overflow-hidden">
+    <img
+      src={logo}
+      alt="PureValue Logo"
+      className="w-full h-full object-contain"
+    />
+  </div>
+
+  <span className="font-display font-semibold text-xl">
+    Pure<span className="text-primary">Value</span>
+  </span>
+</Link>
+
             <p className="text-background/70 font-body text-base leading-relaxed">
               We don't add noise — we build value. Elevating personal brands through strategy, content, and design.
             </p>
@@ -88,10 +96,10 @@ const Footer = () => {
             <ul className="space-y-3">
               <li>
                 <a
-                  href="mailto:hello@purevalue.agency"
+                  href="mailto:purevalue.agency@gmail.com"
                   className="text-background/70 hover:text-primary transition-colors duration-300 font-body"
                 >
-                hello@purevalue.agency <ArrowUpRight size={14} /> 
+                purevalue.agency@gmail.com <ArrowUpRight size={14} /> 
                 </a>
               </li>
               <li>

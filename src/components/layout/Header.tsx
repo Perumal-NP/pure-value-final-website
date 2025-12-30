@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
+import logo from "@/assets/logo.png"; 
 
 const navigation = [
   { name: "Home", href: "/" },
@@ -19,14 +20,19 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border/50">
       <nav className="container-pure flex items-center justify-between h-20">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2 group">
-          <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
-            <span className="text-primary-foreground font-display font-bold text-lg">P</span>
-          </div>
-          <span className="font-display font-semibold text-xl text-foreground">
-            Pure<span className="text-primary">Value</span>
-          </span>
-        </Link>
+      <Link to="/" className="flex items-center gap-2 group">
+  <div className="w-10 h-10 rounded-lg flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+    <img
+      src={logo}
+      alt="PureValue Logo"
+      className="w-10 h-10 object-contain"
+    />
+  </div>
+
+  <span className="font-display font-semibold text-xl text-foreground">
+    Pure<span className="text-primary">Value</span>
+  </span>
+</Link>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center gap-8">

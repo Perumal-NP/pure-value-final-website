@@ -141,12 +141,12 @@ const Contact = () => {
 
           {/* Contact Info */}
           <div className="space-y-6">
-            <ContactItem icon={<Mail />} title="Email" value="hello@purevalue.agency" />
-            <ContactItem icon={<Phone />} title="Phone" value="+1 (234) 567-890" />
+            <ContactItem icon={<Mail />} title="Email" value="purevalue.agency@gmail.com" />
+            <ContactItem icon={<Phone />} title="Phone" value="+91 8637406716" />
             <ContactItem
               icon={<MapPin />}
               title="Location"
-              value="Remote-first · Worldwide"
+              value="Kutteripattu, Tamilnadu-604302"
             />
           </div>
         </div>

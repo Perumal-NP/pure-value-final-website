@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import heroBg from "@/assets/hero-bg.jpg";
+import heroPure from "@/assets/logo.png"
 
 const HeroSection = () => {
   return (
@@ -89,41 +90,37 @@ const HeroSection = () => {
           </div>
 
           {/* Visual Element with floating animation */}
-          <div className="relative hidden lg:block opacity-0 animate-fade-in animation-delay-200">
-            <div className="relative aspect-square max-w-lg mx-auto animate-float">
-              {/* Abstract Brand Visual */}
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl transform rotate-3 animate-pulse-slow" />
-              <div className="absolute inset-4 bg-card rounded-2xl shadow-xl overflow-hidden border border-border/50">
-                <div className="absolute inset-0 bg-gradient-to-br from-foreground to-foreground/90" />
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center space-y-4 p-8">
-                    <div className="w-20 h-20 bg-primary rounded-2xl mx-auto flex items-center justify-center shadow-lg animate-glow">
-                      <span className="text-primary-foreground font-display font-bold text-3xl">P</span>
-                    </div>
-                    <div className="space-y-2">
-                      <p className="text-background font-display font-semibold text-xl">PURE</p>
-                      <div className="flex justify-center gap-2">
-                        {["Position", "Understand", "Refine", "Elevate"].map((word, i) => (
-                          <span key={word} className="text-background/60 text-xs font-body">
-                            {word}{i < 3 && " •"}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              
-              {/* Floating Elements */}
-              <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-display font-medium text-sm shadow-lg animate-bounce">
-                Start Today
-              </div>
-              
-              {/* Additional floating accent */}
-              <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-accent to-accent/50 rounded-xl opacity-60 blur-sm animate-pulse-slow" />
-            </div>
-          </div>
-        </div>
+       <div className="relative hidden lg:block opacity-0 animate-fade-in animation-delay-200">
+  <div className="relative aspect-square max-w-lg mx-auto animate-float">
+
+    {/* Abstract Brand Visual */}
+    <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-3xl transform rotate-3 animate-pulse-slow" />
+
+    {/* Image Card */}
+    <div className="absolute inset-4 bg-card rounded-2xl shadow-xl overflow-hidden border border-border/50">
+      <div className="absolute inset-0 bg-gradient-to-br from-foreground to-foreground/90" />
+
+      {/* Image Container */}
+      <div className="relative w-full h-full flex items-center justify-center p-6">
+        <img
+          src={heroPure} // <-- import your image
+          alt="PURE brand showcase"
+          className="h-[560px] w-[360px] object-contain rounded-xl shadow-2xl"
+        />
+      </div>
+    </div>
+
+    {/* Floating CTA */}
+    <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground px-4 py-2 rounded-full font-display font-medium text-sm shadow-lg animate-bounce">
+      Start Today
+    </div>
+
+    {/* Accent Glow */}
+    <div className="absolute -bottom-6 -left-6 w-16 h-16 bg-gradient-to-br from-accent to-accent/50 rounded-xl opacity-60 blur-sm animate-pulse-slow" />
+
+  </div>
+</div>
+</div>
       </div>
     </section>
   );
