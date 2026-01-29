@@ -36,7 +36,7 @@ const Contact = () => {
         "emplate_r027a9j",
         formRef.current!,
         {
-          publicKey: "arlocAM4sfiwrAgCV",
+          publicKey: "NfOSJEpLDlbVV18Vy",
         }
       );
 
