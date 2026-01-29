@@ -32,7 +32,7 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_eani1zs",
+        "service_luv6jgq",
         "emplate_r027a9j",
         formRef.current!,
         {
