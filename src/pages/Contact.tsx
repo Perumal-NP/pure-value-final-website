@@ -32,8 +32,8 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_gyj14ha",
-        "template_p5idtf6",
+        "service_eani1zs",
+        "emplate_r027a9j",
         formRef.current!,
         {
           publicKey: "arlocAM4sfiwrAgCV",
