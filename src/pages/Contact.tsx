@@ -27,41 +27,58 @@ const Contact = () => {
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      await emailjs.sendForm(
-        "service_luv6jgq",
-        "template_r027a9j",
-        formRef.current!,
-        {
-          publicKey: "seUOJr-M-LXX0vHIo",
-        }
-      );
+  try {
+    // 1️⃣ Send Email
+    await emailjs.sendForm(
+      "service_luv6jgq",
+      "template_r027a9j",
+      formRef.current!,
+      {
+        publicKey: "seUOJr-M-LXX0vHIo",
+      }
+    );
 
-      toast({
-        title: "Message sent!",
-        description: "We'll get back to you within 24 hours.",
-      });
+    // 2️⃣ Send Telegram Message
+    await fetch(`${process.env.BASE_SERVER}/contact`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: formData.name,
+        email: formData.email,
+        phone: formData.phone,
+        business: formData.business,
+        message: formData.message,
+      }),
+    });
 
-      setFormData({
-        name: "",
-        email: "",
-        phone:"",
-        business: "",
-        message: "",
-      });
-    } catch (error) {
-      toast({
-        title: "Failed to send",
-        description: "Please try again later.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    toast({
+      title: "Message sent!",
+      description: "Email & Telegram both delivered successfully 🚀",
+    });
+
+    // Reset form
+    setFormData({
+      name: "",
+      email: "",
+      phone: "",
+      business: "",
+      message: "",
+    });
+  } catch (error) {
+    toast({
+      title: "Failed to send",
+      description: "Email or Telegram failed. Try again.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <Layout>
