@@ -32,11 +32,11 @@ const Contact = () => {
 
     try {
       await emailjs.sendForm(
-        "service_gyj14ha",
-        "template_p5idtf6",
+        "service_luv6jgq",
+        "template_r027a9j",
         formRef.current!,
         {
-          publicKey: "arlocAM4sfiwrAgCV",
+          publicKey: "seUOJr-M-LXX0vHIo",
         }
       );
 
