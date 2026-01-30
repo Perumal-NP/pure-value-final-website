@@ -33,11 +33,7 @@ const Contact = () => {
     try {
       await emailjs.sendForm(
         "service_luv6jgq",
-<<<<<<< HEAD
         "template_r027a9j",
-=======
-        "emplate_r027a9j",
->>>>>>> 7c94cc25ee09d1583a400d84a33ea42b41601b65
         formRef.current!,
         {
           publicKey: "seUOJr-M-LXX0vHIo",
